@@ -6,9 +6,8 @@ const app = express();
 const folder = process.env.RSS_FOLDER;
 
 app.get("/", function(req, res) {
-  var feed = new RSS();
-  const files = fs.readdirSync(folder);
-  files.map(file =>
+  let feed = new RSS();
+  fs.readdirSync(folder).map(file =>
     feed.item({ url: "http://" + req.hostname + ":3000/torrents/" + file })
   );
   const xml = feed.xml();
