@@ -2,5 +2,8 @@
   "dependencies": {
     "express": "^4.16.4",
     "rss": "^1.2.2"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
